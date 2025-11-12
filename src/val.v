@@ -64,19 +64,6 @@ pub type Primitive = Nil
 	| string
 	| time.Time
 	| []Primitive
-	| map[byte]Primitive
-	| map[voidptr]Primitive
-	| map[u16]Primitive
-	| map[u32]Primitive
-	| map[u64]Primitive
-	| map[i8]Primitive
-	| map[i16]Primitive
-	| map[int]Primitive
-	| map[i64]Primitive
-	| map[f32]Primitive
-	| map[f64]Primitive
-	| map[rune]Primitive
-	| map[string]Primitive
 
 pub type Any = Nil
 	| voidptr
@@ -108,3 +95,6 @@ pub type Any = Nil
 	| map[f64]Any
 	| map[rune]Any
 	| map[string]Any
+
+pub interface Struct {
+}
