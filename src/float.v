@@ -20,3 +20,14 @@ pub fn (f Float) f64() f64 {
 		}
 	}
 }
+
+pub fn (f Float) uint() Uint {
+	return match f {
+		f32 {
+			Uint(u32(f))
+		}
+		f64 {
+			Uint(u64(f))
+		}
+	}
+}
