@@ -31,3 +31,14 @@ pub fn (f Float) uint() Uint {
 		}
 	}
 }
+
+pub fn (f Float) int() Int {
+	return match f {
+		f32 {
+			Int(int(f))
+		}
+		f64 {
+			Int(i64(f))
+		}
+	}
+}
