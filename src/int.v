@@ -39,16 +39,22 @@ pub fn (i Int) u64() u64 {
 }
 
 pub fn (i Int) i8() i8 {
-	return if i is i8 {
-		i
-	} else {
-		i as i8
+	return match i {
+		u8, u16, u32, u64 {
+			i8(i)
+		}
+		i8 {
+			i
+		}
+		else {
+			i as i8
+		}
 	}
 }
 
 pub fn (i Int) i16() i16 {
 	return match i {
-		i8 {
+		u8, u16, u32, u64, i8 {
 			i16(i)
 		}
 		i16 {
@@ -62,7 +68,7 @@ pub fn (i Int) i16() i16 {
 
 pub fn (i Int) int() int {
 	return match i {
-		i8, i16 {
+		u8, u16, u32, u64, i8, i16 {
 			int(i)
 		}
 		int {
@@ -76,14 +82,11 @@ pub fn (i Int) int() int {
 
 pub fn (i Int) i64() i64 {
 	return match i {
-		i8, i16, int {
+		u8, u16, u32, u64, i8, i16, int {
 			i64(i)
 		}
 		i64 {
 			i
-		}
-		else {
-			i as i64
 		}
 	}
 }
