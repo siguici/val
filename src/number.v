@@ -15,3 +15,14 @@ pub fn (n Number) uint() Uint {
 		}
 	}
 }
+
+pub fn (n Number) int() Int {
+	return match n {
+		u8, u16, u32, u64, i8, i16, int, i64 {
+			Int(n)
+		}
+		f32, f64 {
+			Float(n).int()
+		}
+	}
+}
