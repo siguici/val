@@ -56,3 +56,30 @@ pub fn (u Uint) int() Int {
 		}
 	}
 }
+
+pub fn (u Uint) f32() f32 {
+	return match u {
+		u8, u16, u32, u64 {
+			f32(u)
+		}
+	}
+}
+
+pub fn (u Uint) f64() f64 {
+	return match u {
+		u8, u16, u32, u64 {
+			f64(u)
+		}
+	}
+}
+
+pub fn (u Uint) float() Float {
+	return match u {
+		u8, u16, u32 {
+			Float(f32(u))
+		}
+		u64 {
+			Float(f64(u))
+		}
+	}
+}
