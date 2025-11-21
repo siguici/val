@@ -1,7 +1,5 @@
 module val
 
-import time
-
 pub type Primitive = Nil
 	| voidptr
 	| bool
@@ -17,7 +15,6 @@ pub type Primitive = Nil
 	| f64
 	| rune
 	| string
-	| time.Time
 	| []Primitive
 
 fn bool_to_primitive(b bool) Primitive {
@@ -188,16 +185,4 @@ fn option_string_to_primitive(b ?string) Primitive {
 
 fn array_string_to_primitive(b []string) Primitive {
 	return Primitive(b.map(string_to_primitive(it)))
-}
-
-fn time_to_primitive(b time.Time) Primitive {
-	return Primitive(b)
-}
-
-fn option_time_to_primitive(b ?time.Time) Primitive {
-	return if b_ := b { Primitive(b_) } else { nil_primitive }
-}
-
-fn array_time_to_primitive(b []time.Time) Primitive {
-	return Primitive(b.map(time_to_primitive(it)))
 }

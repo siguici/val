@@ -1,7 +1,5 @@
 module val
 
-import time
-
 pub type Any = Nil
 	| voidptr
 	| bool
@@ -17,7 +15,6 @@ pub type Any = Nil
 	| f64
 	| rune
 	| string
-	| time.Time
 	| []Any
 	| map[u8]Any
 	| map[voidptr]Any
