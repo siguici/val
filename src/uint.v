@@ -84,6 +84,14 @@ pub fn (u Uint) float() Float {
 	}
 }
 
+pub fn (u Uint) number() Number {
+	return match u {
+		u8, u16, u32, u64 {
+			Number(u)
+		}
+	}
+}
+
 pub fn (u Uint) scalar() Scalar {
 	return match u {
 		u8, u16, u32, u64 {
