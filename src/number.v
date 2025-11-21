@@ -37,3 +37,11 @@ pub fn (n Number) float() Float {
 		}
 	}
 }
+
+pub fn (n Number) scalar() Scalar {
+	return match n {
+		u8, u16, u32, u64, i8, i16, int, i64, f32, f64 {
+			Scalar(n)
+		}
+	}
+}

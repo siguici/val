@@ -42,3 +42,11 @@ pub fn (f Float) int() Int {
 		}
 	}
 }
+
+pub fn (f Float) scalar() Scalar {
+	return match f {
+		f32, f64 {
+			Scalar(f)
+		}
+	}
+}

@@ -117,3 +117,11 @@ pub fn (i Int) float() Float {
 		}
 	}
 }
+
+pub fn (i Int) scalar() Scalar {
+	return match i {
+		u8, u16, u32, u64, i8, i16, int, i64 {
+			Scalar(i)
+		}
+	}
+}
