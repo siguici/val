@@ -48,3 +48,11 @@ pub fn (u Uint) u64() u64 {
 		}
 	}
 }
+
+pub fn (u Uint) int() Int {
+	return match u {
+		u8, u16, u32, u64 {
+			Int(u)
+		}
+	}
+}
