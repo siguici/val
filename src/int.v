@@ -90,3 +90,30 @@ pub fn (i Int) i64() i64 {
 		}
 	}
 }
+
+pub fn (i Int) f32() f32 {
+	return match i {
+		u8, u16, u32, u64, i8, i16, int, i64 {
+			f32(i)
+		}
+	}
+}
+
+pub fn (i Int) f64() f64 {
+	return match i {
+		u8, u16, u32, u64, i8, i16, int, i64 {
+			f64(i)
+		}
+	}
+}
+
+pub fn (i Int) float() Float {
+	return match i {
+		u8, u16, u32, i8, i16, int {
+			Float(f32(i))
+		}
+		u64, i64 {
+			Float(f64(i))
+		}
+	}
+}
