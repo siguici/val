@@ -1,6 +1,6 @@
 module val
 
-pub type Int = byte
+pub type Int = u8
 	| u16
 	| u32
 	| u64
